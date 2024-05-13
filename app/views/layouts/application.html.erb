@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Book Man</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+<header class="header">
+  <nav class="nav">
+      <%= link_to "BOOK MAN", root_path, class: "nav-title" %>
+  <% if user_signed_in? %>
+  <span><%= current_user.username %></span>
+      <span><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link' %></span>
+      <% unless current_page?(new_book_path) %>
+        <span><%= link_to '新規投稿', new_book_path, class: 'nav-link' %></span>
+      <% else %>  
+        <span><%= link_to 'ホームページ', root_path, class: 'nav-link' %></span>
+      <% end %>
+    <% else %>  
+      <span><%= link_to '新規登録', new_user_registration_path, class: 'nav-link' %></span>
+      <span><%= link_to 'ログイン', new_user_session_path, class: 'nav-link' %></span>
+    <% end %>
+    <%= form_with(url: search_books_path, method: :get, local: true, class: "search-form") do |form| %>
+      <%= form.text_field :query, placeholder: "キーワード入力" %>
+      <%= form.submit '検索' %>
+    <% end %>
+  </nav>
+</header>
+
+<%= yield %>
+</body>
+</html>

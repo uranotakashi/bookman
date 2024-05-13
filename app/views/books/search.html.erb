@@ -1,0 +1,14 @@
+<div class="container">
+  <% @books.each do |book| %>
+    <div class="card mb-3">
+      <div class="card-body">
+        <p class="border-bottom-strong"><strong>投稿者:</strong> <%= book.user.username %></p>
+        <p class="border-bottom-strong"><strong>著書名:</strong> <%= book.title %></p>
+        <p class="border-bottom-strong"><strong>著者:</strong> <%= book.author %></p>
+        <p class="border-bottom-strong"><strong>出版社:</strong> <%= book.publisher %></p>
+        <p><strong>書評</strong></p>
+        <p><%= book.review %></p>
+      </div>
+    </div>
+  <% end %>
+</div>

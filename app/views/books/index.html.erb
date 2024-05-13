@@ -1,0 +1,14 @@
+<div class="container">
+  <h1 class="text-center mb-4">読書体験を共有しよう</h1>
+  <% @books.each do |book| %>
+    <div class="card mb-3">
+      <div class="card-body">
+          <p class="text-left"><%= link_to '書評を読む', book_path(book), class: 'btn btn-link button-link', style: 'color: black; text-decoration: none;' %></p>
+          <p class="border-bottom-strong"><strong>投稿者:</strong> <%= book.user.username %></p>
+          <p class="border-bottom-strong"><strong>著書名:</strong> <%= book.title %></p>
+          <p class="border-bottom-strong"><strong>著者名:</strong> <%= book.author %></p>
+          <p class="border-bottom-strong"><strong>出版社:</strong> <%= book.publisher %></p>
+      </div>
+    </div>
+  <% end %>
+</div>

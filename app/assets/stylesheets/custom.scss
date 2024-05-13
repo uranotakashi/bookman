@@ -1,0 +1,77 @@
+.header {
+  width: 100%;
+  margin: 0;
+  background-color:#a7ce69;
+}
+
+.header strong {
+  font-size: 2em;
+  padding-left: 30px;
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-start; 
+  align-items: center;
+}
+
+.nav > *:not(:last-child) {
+  margin-right: 5px;
+}
+
+
+.nav-title {
+  font-size: 36px;
+  text-decoration: none;
+  color: black;
+}
+
+.nav-link {
+  color: black; 
+  font-weight: bold;
+}
+
+body {
+  background-color: #dcecc1;
+}
+
+.container {
+  max-width: 500px; 
+  margin: 0 auto;  
+}
+
+.form-group {
+  margin-bottom: 20px; 
+}
+
+.border-bottom-strong {
+  border-bottom: 2px solid #000; 
+}
+
+.card-body p, .card-body h2 {
+  font-size: 1em;
+}
+
+body {
+  background-image: linear-gradient(rgba(84, 199, 93, 0.5), rgba(51, 119, 68, 0.5)), url('/assets/karakusa.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.button-link {
+  border: 2px solid black; 
+  padding: 5px;  
+  display: inline-block; 
+}
+
+.review-section,
+.comment-section {
+  padding: 10px;
+  margin: 30px 0;
+  border: 2px solid #181717;
+  border-radius: 5px;
+}
+
+.nav > span {
+  font-weight: bold;
+}
