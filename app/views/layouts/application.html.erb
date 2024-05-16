@@ -14,7 +14,9 @@
   <nav class="nav">
       <%= link_to "BOOK MAN", root_path, class: "nav-title" %>
   <% if user_signed_in? %>
-  <span><%= current_user.username %></span>
+  <li class="nav-item">
+            <%= link_to 'マイページ', user_path, class: 'nav-link' %>
+          </li>
       <span><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link' %></span>
       <% unless current_page?(new_book_path) %>
         <span><%= link_to '新規投稿', new_book_path, class: 'nav-link' %></span>
@@ -35,3 +37,4 @@
 <%= yield %>
 </body>
 </html>
+
